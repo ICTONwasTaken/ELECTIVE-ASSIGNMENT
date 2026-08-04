@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>THOUSANDS</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 20px auto 20px;
+    user-select: none;
+}
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+.container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 16vh auto 5vh;
+    user-select: none;
+}
+.box {
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    padding: 50px;
+    justify-self: center;
+    text-align: center;
+    transition: 0.4s;
+}
+.box:hover {
+    border: 2px dotted rgb(75, 75, 75);
+    background-color: rgb(235, 235, 235);
+    font-size: 18px;
+    font-weight: 10px;
+}
+#something {
+    color: black;
+    font-size: 50px;
+    opacity: 0;
+    transition: 0.2s;
+}
+#progress-label {
+    font-size: 14px;
+    color: rgb(120, 120, 120);
+    margin-top: 6px;
+}
+.box.active {
+    background-color: rgb(163, 163, 163);
+}
+#something.active {
+    color: tomato;
+}
+.box.hidden {
+    display: none;
+}
+
+
+#resume {
+    display: none;
+    max-width: 700px;
+    margin: 8vh auto 10vh;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+#resume.show {
+    display: block;
+    opacity: 1;
+}
+.resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.resume-header h1 {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+.resume-header h2 {
+    margin: 4px 0 12px;
+    font-weight: normal;
+    color: rgb(90, 90, 90);
+    font-size: 18px;
+}
+.resume-header .contact {
+    font-size: 14px;
+    color: rgb(120, 120, 120);
+}
+.resume-section {
+    margin-bottom: 26px;
+}
+.resume-section h3 {
+    border-bottom: 2px solid tomato;
+    padding-bottom: 6px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(40, 40, 40);
+}
+.entry {
+    margin-bottom: 14px;
+}
+.entry-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+.entry-sub {
+    font-size: 13px;
+    color: rgb(120, 120, 120);
+    margin-bottom: 4px;
+}
+.entry ul {
+    margin: 4px 0 0 18px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skill-tag {
+    background: rgb(235, 235, 235);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    position: relative; 
+}
+.tooltip { 
+    background: rgb(88, 88, 88);
+    color: aliceblue;
+    position: absolute;
+    opacity: 0; 
+    visibility: hidden;
+
+    z-index: 100;
+    border-radius: 5px;
+    padding: 10px;
+    
+    top: 100%;
+    right: 0px;
+
+    transition: 0.4s;
+}
+.skill-tag:hover .tooltip { 
+    visibility: visible; 
+    opacity: 1;
+}
+
+.image {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+}
+
+</style>
+</head>
+<body>
+    <div class="message">
+        <div id="message-message">Things must be earned first</div>
+    </div>
+    <div class="container2">
+        <div id="something">0</div>
+        <div id="progress-label">0 / 100 clicks</div>
+    </div>
+    <div class="container1">
+        <div class="box" id="clickbox"><b>CLICK ME</b></div>
+    </div>
+
+    <div id="resume">
+        <div class="resume-header">
+            <h1>MANARANG, MARIUS L.</h1>
+            <div class="contact">m.manarang@mcc.edu.ph | 991-077-1754 | Free Hours: NEVER, DON'T CALL ME</div>
+        </div>
+
+        <div class="resume-section">
+            <h3>About</h3>
+            <p>Gobbledy-gook, gwardidy frak. Something something, something something. Hoobidy-goobidy gooba hickery dee dum de doo! Bididi-babidi-buu. That was my magic spell, you are now legally a pumpkin, but only in name.</p>
+        </div>
+
+        <div class="resume-section">
+            <h3>Educational Background</h3>
+            <div class="entry">
+                <div class="entry-title">Montessori School of Saint Nicholas</div>
+                <img src="mssn.jpg" class="image">
+            </div>
+            <div class="entry">
+                <div class="entry-title">Holy Angel University</div>
+                <img src="hau.png" class="image">
+            </div>
+            <div class="entry">
+                <div class="entry-title">Clark College of Science and Technology</div>
+                <img src="ccst.jpg" class="image">
+            </div>
+            <div class="entry">
+                <div class="entry-title">Mabalacat City College</div>
+                <img src="mcc.png" class="image">
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Skills</h3>
+            <ul>
+                    <li>Walking</li>
+                    <li>Sleeping</li>
+                    <li>Walking again</li>
+                    <li>That one thing I did earlier</li>
+                    <li>Making needlessly repetitive and asinine lists</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h3>Hobbies</h3>
+            <div class="skills">
+                <span class="skill-tag">Animation/Drawing<span class="tooltip">Been practicing this for a decade now.<br>Giving images the illusion of movement.</span></span>
+                <span class="skill-tag">Making Games<span class="tooltip">What I expected to be learning in IT. Unfortunately...</span></span>
+                <span class="skill-tag">Vs Debating/Powerscaling<span class="tooltip">No, not like the snooty ones online.<br><br>Learning about characters and how powerful they are is fun.</span></span>
+                <span class="skill-tag">Cats and Kittens<span class="tooltip">Nothing major.<br><br>I simply consider them the Omnipotent Gods of the Universe, that's it.</span></span>
+                <span class="skill-tag">Being bad at anything related to Network Management<span class="tooltip">I had no idea IT was mostly about this, this pains me infinitely. I am more than likely going to fail this year due to this.<br>Help me.</span></span>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Personal Objectives</h3>
+            <ul>
+                    <li>Graduating without immolation</li>
+                    <li>Never deal with Networking ever again</li>
+                    <li>Hope that my parents don't make me become a lawyer</li>
+                    <li>Erect a statue depicting the infinite providence and power of cats.</li>
+                    <li>To create something small or silly that would make someone laugh or smile for just a moment. And I hope that worked.</li>
+            </ul>
+        </div>
+    </div>
+
+<script>
+    const CLICK_TARGET = 100;
+
+    const texting = document.getElementById("something");
+    const progressLabel = document.getElementById("progress-label");
+    const box = document.getElementById("clickbox");
+    const resume = document.getElementById("resume");
+
+    let count = 0;
+
+    box.addEventListener("click", function () {
+        if (count >= CLICK_TARGET) return;
+
+        count += 1;
+
+        texting.textContent = count;
+        texting.style.opacity = Math.min(count / CLICK_TARGET, 1);
+        progressLabel.textContent = count + " / " + CLICK_TARGET + " clicks";
+
+        box.classList.add("active");
+        texting.classList.add("active");
+        setTimeout(() => {
+            box.classList.remove("active");
+            texting.classList.remove("active");
+        }, 80);
+
+        if (count === CLICK_TARGET) {
+            progressLabel.textContent = "unlocked!";
+            box.classList.add("hidden");
+            resume.classList.add("show");
+        }
+    });
+</script>
+</body>
+</html>
